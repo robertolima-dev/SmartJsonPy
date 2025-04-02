@@ -1,0 +1,123 @@
+# 📦 SmartJsonPy
+
+**SmartJsonPy** é um pacote Python leve e poderoso para manipulação de JSON. Ele oferece funções para validação, limpeza, extração, deduplicamento e conversão de dados JSON. Ideal para preparação de dados, integrações com APIs e exportação para planilhas.
+
+
+---
+
+## 🧪 Testes
+Execute os testes com `pytest`:
+```bash
+pytest tests/
+```
+
+---
+
+## 🚀 Instalação
+```bash
+pip install SmartJsonPy
+```
+
+> Requer: Python >= 3.7
+
+---
+
+## ✨ Funcionalidades
+
+### ✅ Validação de JSON
+```python
+from SmartJsonPy import validator
+
+validator.is_valid_json_string('{"nome": "João"}')  # True
+validator.is_valid_json_object({"id": 1})              # True
+validator.has_required_keys({"id": 1}, ["id"])        # True
+validator.is_json_schema_compatible({"id": 1}, {"id": int})  # True
+```
+
+### 🧹 Limpeza de dados
+```python
+from SmartJsonPy import cleaner
+
+data = {"a": 1, "b": None, "c": "", "d": []}
+cleaner.remove_none_values(data)       # {"a": 1, "c": "", "d": []}
+cleaner.remove_empty_values(data)      # {"a": 1}
+cleaner.strip_whitespace_keys({" nome ": "Ana"})  # {"nome": "Ana"}
+
+nested = {"x": {"y": {"z": None}}, "a": ["ok", {}]}
+cleaner.clean_nested_dict(nested)  # {"a": ["ok"]}
+```
+
+### 🔍 Extração de dados
+```python
+from SmartJsonPy import extractor
+
+data = {"a": 1, "b": {"a": 2}, "c": [{"a": 3}, {"x": 9}]}
+extractor.extract_keys(data)           # ['a', 'b', 'c', 'x']
+extractor.extract_values_by_key(data, "a")  # [1, 2, 3]
+```
+
+### 🔁 Deduplicar dados
+```python
+from SmartJsonPy import utils
+
+# Dicionários duplicados
+lst = [{"a": 1}, {"a": 1}, {"b": 2}]
+utils.remove_duplicate_dicts(lst)  # [{"a": 1}, {"b": 2}]
+
+# Itens duplicados
+nums = [1, 2, 2, 3, 1]
+utils.remove_duplicate_items(nums)  # [1, 2, 3]
+```
+
+### 🔄 Conversões entre string e JSON
+```python
+from SmartJsonPy import utils
+
+# JSON para string
+d = {"nome": "João"}
+utils.json_to_string(d)  # '{"nome": "João"}'
+
+# String para JSON
+s = '{"nome": "Maria"}'
+utils.string_to_json(s)  # {'nome': 'Maria'}
+```
+
+### 📊 Conversão para formato de colunas (planilhas)
+```python
+from SmartJsonPy import utils
+
+lista = [
+    {"name": "Roberto", "age": 45, "gender": "m"},
+    {"name": "Joao", "age": 32, "gender": "m"},
+    {"name": "Renata", "age": 39, "gender": "f"}
+]
+
+utils.convert_list_of_dicts_to_columns(lista)
+# (
+#   ('name', 'age', 'gender'),
+#   ('Roberto', 'Joao', 'Renata'),
+#   (45, 32, 39),
+#   ('m', 'm', 'f')
+# )
+```
+
+---
+
+## 👨‍💻 **Autor**
+
+Desenvolvido por **[Roberto Lima](https://github.com/robertolima-dev)** 🚀✨
+
+---
+
+## 💬 **Contato**
+
+- 📧 **Email**: robertolima.izphera@gmail.com
+- 💼 **LinkedIn**: [Roberto Lima](https://www.linkedin.com/in/roberto-lima-01/)
+- 💼 **Website**: [Roberto Lima](https://robertolima-developer.vercel.app/)
+- 💼 **Gravatar**: [Roberto Lima](https://gravatar.com/deliciouslyautomaticf57dc92af0)
+
+
+---
+
+## 📄 Licença
+MIT License

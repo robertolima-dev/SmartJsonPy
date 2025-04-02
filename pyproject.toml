@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "SmartJsonPy"
+version = "0.1.0"
+description = "Funções inteligentes para validação, limpeza e conversão de JSON em Python"
+authors = [
+    { name = "Roberto Lima", email = "robertolima.izphera@gmail.com" }
+]
+requires-python = ">=3.7"
+readme = "README.md"
+license = { text = "MIT" }
+keywords = ["json", "validação", "limpeza", "parser", "conversão", "utils", "python"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/robertolima-dev/SmartJsonPy"
+Repository = "https://github.com/robertolima-dev/SmartJsonPy"
+Documentation = "https://pypi.org/project/SmartJsonPy/"
