@@ -121,4 +121,41 @@ nested = transformer.unflatten_json({"a.b.c": 1})
 ```
 
 ### 📊 Conversão para formato de colunas (planilhas)
+```python
+from SmartJsonPy import utils
+
+lista = [
+    {"name": "Roberto", "age": 45, "gender": "m"},
+    {"name": "Joao", "age": 32, "gender": "m"},
+    {"name": "Renata", "age": 39, "gender": "f"}
+]
+
+utils.convert_list_of_dicts_to_columns(lista)
+# (
+#   ('name', 'age', 'gender'),
+#   ('Roberto', 'Joao', 'Renata'),
+#   (45, 32, 39),
+#   ('m', 'm', 'f')
+# )
 ```
+
+---
+
+## 👨‍💻 **Autor**
+
+Desenvolvido por **[Roberto Lima](https://github.com/robertolima-dev)** 🚀✨
+
+---
+
+## 💬 **Contato**
+
+- 📧 **Email**: robertolima.izphera@gmail.com
+- 💼 **LinkedIn**: [Roberto Lima](https://www.linkedin.com/in/roberto-lima-01/)
+- 💼 **Website**: [Roberto Lima](https://robertolima-developer.vercel.app/)
+- 💼 **Gravatar**: [Roberto Lima](https://gravatar.com/deliciouslyautomaticf57dc92af0)
+
+
+---
+
+## 📄 Licença
+MIT License

@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="SmartJsonPy",
-    version="0.1.0",
+    version="1.1.0",
     description="📦 Funções inteligentes para manipulação e validação de JSON em Python",
     author="Roberto Lima",
     author_email="robertolima.izphera@gmail.com",
