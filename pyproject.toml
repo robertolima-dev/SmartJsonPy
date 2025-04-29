@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "SmartJsonPy"
-version = "0.1.0"
+version = "1.0.0"
 description = "Funções inteligentes para validação, limpeza e conversão de JSON em Python"
 authors = [
     { name = "Roberto Lima", email = "robertolima.izphera@gmail.com" }
@@ -18,7 +18,11 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent"
 ]
-dependencies = []
+dependencies = [
+    "pyyaml>=6.0",
+    "xmltodict>=0.13.0",
+    "pandas>=2.0.0"
+]
 
 [project.urls]
 Homepage = "https://github.com/robertolima-dev/SmartJsonPy"

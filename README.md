@@ -82,42 +82,43 @@ s = '{"nome": "Maria"}'
 utils.string_to_json(s)  # {'nome': 'Maria'}
 ```
 
-### 📊 Conversão para formato de colunas (planilhas)
+### 🔄 Transformação de Dados
 ```python
-from SmartJsonPy import utils
+from SmartJsonPy import transformer
 
+# JSON para YAML
+data = {"nome": "João", "idade": 30}
+yaml_str = transformer.json_to_yaml(data)
+# name: João
+# age: 30
+
+# JSON para XML
+xml_str = transformer.json_to_xml(data, root_name="pessoa")
+# <?xml version="1.0" encoding="utf-8"?>
+# <pessoa>
+#   <nome>João</nome>
+#   <idade>30</idade>
+# </pessoa>
+
+# JSON para CSV
 lista = [
-    {"name": "Roberto", "age": 45, "gender": "m"},
-    {"name": "Joao", "age": 32, "gender": "m"},
-    {"name": "Renata", "age": 39, "gender": "f"}
+    {"nome": "João", "idade": 30},
+    {"nome": "Maria", "idade": 25}
 ]
+csv_str = transformer.json_to_csv(lista)
+# nome,idade
+# João,30
+# Maria,25
 
-utils.convert_list_of_dicts_to_columns(lista)
-# (
-#   ('name', 'age', 'gender'),
-#   ('Roberto', 'Joao', 'Renata'),
-#   (45, 32, 39),
-#   ('m', 'm', 'f')
-# )
+# Achatamento de JSON
+nested = {"a": {"b": {"c": 1}}}
+flat = transformer.flatten_json(nested)
+# {"a.b.c": 1}
+
+# Desachatamento de JSON
+nested = transformer.unflatten_json({"a.b.c": 1})
+# {"a": {"b": {"c": 1}}}
 ```
 
----
-
-## 👨‍💻 **Autor**
-
-Desenvolvido por **[Roberto Lima](https://github.com/robertolima-dev)** 🚀✨
-
----
-
-## 💬 **Contato**
-
-- 📧 **Email**: robertolima.izphera@gmail.com
-- 💼 **LinkedIn**: [Roberto Lima](https://www.linkedin.com/in/roberto-lima-01/)
-- 💼 **Website**: [Roberto Lima](https://robertolima-developer.vercel.app/)
-- 💼 **Gravatar**: [Roberto Lima](https://gravatar.com/deliciouslyautomaticf57dc92af0)
-
-
----
-
-## 📄 Licença
-MIT License
+### 📊 Conversão para formato de colunas (planilhas)
+```
