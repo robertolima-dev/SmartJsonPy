@@ -20,6 +20,7 @@ IMPORT_TO_DIST = {
     "google": "google-auth",
     "jwt": "pyjwt",
     "msoffcrypto": "msoffcrypto-tool",
+    "bs4": "beautifulsoup4",
 }
 
 
