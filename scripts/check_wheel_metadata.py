@@ -19,6 +19,7 @@ IMPORT_TO_DIST = {
     "googleapiclient": "google-api-python-client",
     "google": "google-auth",
     "jwt": "pyjwt",
+    "msoffcrypto": "msoffcrypto-tool",
 }
 
 
