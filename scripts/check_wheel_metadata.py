@@ -18,6 +18,7 @@ IMPORT_TO_DIST = {
     "dateutil": "python-dateutil",
     "googleapiclient": "google-api-python-client",
     "google": "google-auth",
+    "jwt": "pyjwt",
 }
 
 
