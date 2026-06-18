@@ -21,6 +21,8 @@ IMPORT_TO_DIST = {
     "jwt": "pyjwt",
     "msoffcrypto": "msoffcrypto-tool",
     "bs4": "beautifulsoup4",
+    "docx": "python-docx",
+    "spellchecker": "pyspellchecker",
 }
 
 
